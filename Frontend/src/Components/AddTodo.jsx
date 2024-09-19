@@ -4,10 +4,15 @@ import { ADDTodo } from '../Features/Todo/Todoslice'
 
 function AddTodo() {
     const [Input , setInput] = useState([])
+    if (Input != ""){}
     const dispatch = useDispatch()
     const addTodoHandler = (e) => {
         e.preventDefault()
-        dispatch(ADDTodo(Input))
+        // Only add if input field is filled with some text 
+        if (Input != ""){
+          dispatch(ADDTodo(Input))  
+        }
+        // dispatch(ADDTodo(Input))
         setInput("")
     }
   return (
