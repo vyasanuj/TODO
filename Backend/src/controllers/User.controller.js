@@ -27,17 +27,17 @@ const generateAccessandRefereshTokens = async(UserID) => {
 }
 
 const registerUser = asycnHandler ( async (req , res) => {
-    const {Username , email , fullname , avatar , password} = req.body
+    const {Username, Email, Password} = req.body
     // console.log (" EMAIL :" , email )
     console.log("request.body content :",req.body)
     if (
-        [Username , email , fullname , avatar , password].some((field)=>field?.trim() ==="")
+        [Username , Email , Password].some((field)=>field?.trim() ==="")
     ){
         throw new ApiError(400,"All fields are required")
     }
 
     const existedUser = await User.findOne({
-        $or : [{Username},{email}]
+        $or : [{Username},{Email}]
     })
 
     if (existedUser) {
@@ -60,11 +60,11 @@ const registerUser = asycnHandler ( async (req , res) => {
     // }
 
     const user = await User.create({
-        fullname ,
+        // fullname ,
         // avatar : Avatar.url ,
         // coverImage :
-        email,
-        password,
+        Email,
+        Password,
         Username
         // Username: Username.toLowerCase()
     });
@@ -90,25 +90,25 @@ const registerUser = asycnHandler ( async (req , res) => {
 
 const LoginUser = asycnHandler (async (req,res) => {
 
-    const { email , Username , password } = req.body
+    const { Email , Username , Password } = req.body
     // console.log ("data coming or not",fullname) ;
 
     // if you want only one field 
     // if (!(username || email))
-    if (!Username && !email) {
+    if (!Username && !Email) {
         throw new ApiError(400 , "Username and email are required")
     }
 
     const user = await User.findOne({
-        $or : [{Username} , {email}]
+        $or : [{Username} , {Email}]
     })
 
     if (!user) {
         throw new ApiError(400 , "you are not registred")
     }
     
-    const isPasswordValid = await user.isPasswordCorrect(password) 
-    console.log("correct password is:" , password)
+    const isPasswordValid = await user.isPasswordCorrect(Password) 
+    console.log("correct password is:" , Password)
     if (!isPasswordValid){
         throw new ApiError(400 , "password is not valid") 
     }

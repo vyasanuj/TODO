@@ -22,9 +22,9 @@ function Registration() {
         console.log("User from store:", user);
 
         const userData = {
-            username: Username || user?.username,  // Use form value or user value from store
-            email: Email || user?.email,
-            password: Password
+           Username,
+            Email,
+           Password
         };
 
         try {
@@ -33,10 +33,10 @@ function Registration() {
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify(userData)
+                body: JSON.stringify()
             });
 
-            const data = await response.json();
+            const data = await response.json(userData);
 
             if (response.ok) {
                 dispatch(RegisterUser({ username: Username, email: Email }));

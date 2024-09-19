@@ -2,6 +2,7 @@ import express, { json } from "express"
 import cors from "cors"
 import cookieparser from "cookie-parser"
 
+
 const app = express() 
 
 app.use(cors({
@@ -19,6 +20,8 @@ app.use(express.urlencoded({
 }))
 app.use(express.static("public"))
 app.use(cookieparser())
+
+app.use(express.json({limit: "16kb"})); 
 
 // routes import
 import UserRouter from "./routes/User.routes.js"
