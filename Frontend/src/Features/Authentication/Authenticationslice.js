@@ -40,5 +40,5 @@ export const AuthenticationSlice = createSlice ({
 
 })
 
-export const { RegisterUser, loginUser, logoutUser, setError } = AuthenticationSlice.actions;
+export const { RegisterUser, LoginUser, logoutUser, setError } = AuthenticationSlice.actions;
 export default AuthenticationSlice.reducer;

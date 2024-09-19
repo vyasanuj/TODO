@@ -34,7 +34,7 @@ function Registration() {
     return (
         <div className="min-h-screen bg-gray-900 flex flex-col justify-center items-center">
             <div className="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
-                <h1 className="text-3xl text-white font-bold mb-6 text-center">Register</h1>
+                <h1 className="text-3xl text-white font-bold mb-6 text-center font-mono">Register</h1>
                 <form onSubmit={SubmitHandle} className="space-y-4">
                     <div>
                         <input
@@ -42,7 +42,7 @@ function Registration() {
                             placeholder="Username"
                             value={Username}
                             onChange={(e) => setUsername(e.target.value)}
-                            className="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-white"
+                            className="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-white font-mono"
                         />
                     </div>
                     <div>
@@ -51,7 +51,7 @@ function Registration() {
                             placeholder="Email"
                             value={Email}
                             onChange={(e) => setEmail(e.target.value)}
-                            className="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-white"
+                            className="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-white font-mono"
                         />
                     </div>
                     <div>
@@ -60,12 +60,12 @@ function Registration() {
                             placeholder="Password"
                             value={Password}
                             onChange={(e) => setPassword(e.target.value)}
-                            className="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-white"
+                            className="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-white font-mono"
                         />
                     </div>
                     <button
                         type="submit"
-                        className="w-full p-3 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition-all duration-300"
+                        className="w-full p-3 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition-all duration-300 font-mono"
                     >
                         Submit
                     </button>
@@ -73,10 +73,10 @@ function Registration() {
                 </form>
                   {/* Add Login Button */}
                   <div className="mt-4 text-center">
-                    <span className="text-white">Already registered?</span>
+                    <span className="text-white font-mono">Already registered?</span>
                     <Link
                         to="/login" // Route to your login component
-                        className="text-indigo-500 hover:underline ml-2"
+                        className="text-indigo-500 hover:underline ml-2 font-mono"
                     >
                         Login Here
                     </Link>
