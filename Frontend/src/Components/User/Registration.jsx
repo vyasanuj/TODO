@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { RegisterUser, setError } from "../../Features/Authentication/Authenticationslice";
+import { RegisterUser, setError } from '../../Features/Authentication/Authenticationslice';
+import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
 
 function Registration() {
@@ -10,12 +12,14 @@ function Registration() {
     const [Password, setPassword] = useState("");
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const SubmitHandle = (e) => {
         e.preventDefault();
         // Your form submission logic here
         if (Username && Email && Password) {
             dispatch(RegisterUser({ username:Username , email : Email }))
+            navigate('/dashboard');
         }
         else {
             dispatch(setError("all fields are required")) ; 
@@ -65,7 +69,18 @@ function Registration() {
                     >
                         Submit
                     </button>
+                    
                 </form>
+                  {/* Add Login Button */}
+                  <div className="mt-4 text-center">
+                    <span className="text-white">Already registered?</span>
+                    <Link
+                        to="/login" // Route to your login component
+                        className="text-indigo-500 hover:underline ml-2"
+                    >
+                        Login Here
+                    </Link>
+                </div>
             </div>
         </div>
     );

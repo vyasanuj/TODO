@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { ADDTodo } from '../Features/Todo/Todoslice'
+import { useNavigate } from 'react-router-dom'
 
 function AddTodo() {
     const [Input , setInput] = useState([])
+    // const navigate = useNavigate()
     if (Input != ""){}
     const dispatch = useDispatch()
     const addTodoHandler = (e) => {
@@ -12,6 +14,7 @@ function AddTodo() {
         if (Input != ""){
           dispatch(ADDTodo(Input))  
         }
+        // navigate("/todos")
         // dispatch(ADDTodo(Input))
         setInput("")
     }
