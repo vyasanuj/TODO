@@ -28,7 +28,7 @@ function Registration() {
         };
 
         try {
-            const response = await fetch('https://todo-3-i0t8.onrender.com', {
+            const response = await fetch('https://api.render.com/deploy/srv-crmq6kl6l47c739ujmng?key=0fIRWogIwo4', {
             // const response = await fetch('http://localhost:5000/api/v1/users/register', {
                 method: "POST",
                 headers: {
