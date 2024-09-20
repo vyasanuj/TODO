@@ -19,7 +19,7 @@ function Registration() {
         e.preventDefault();
 
         // You can access the user data from the store if required
-        console.log("User from store:", user);
+        // console.log("User from store:", user);
 
         const userData = {
            Username,
@@ -33,7 +33,7 @@ function Registration() {
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify()
+                body: JSON.stringify(userData) 
             });
 
             const data = await response.json(userData);
@@ -49,6 +49,8 @@ function Registration() {
             dispatch(setError("An error occurred while registering"));
         }
     };
+
+    console.log("User from store:", user);
 
     return (
         <div className="min-h-screen bg-gray-900 flex flex-col justify-center items-center">

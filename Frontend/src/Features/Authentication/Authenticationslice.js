@@ -18,6 +18,7 @@ export const AuthenticationSlice = createSlice ({
                 email: action.payload.email 
             } 
             state.IsAuthenticated = true 
+            
         },
 
         LoginUser : (state , action) => {
@@ -26,6 +27,7 @@ export const AuthenticationSlice = createSlice ({
                 email : action.payload.email
             }
             state.IsAuthenticated = true
+            
         },
         LogoutUser : (state,action) => {
             state.user = null ,
