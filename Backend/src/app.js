@@ -22,7 +22,7 @@ app.use(express.static("public"))
 app.use(cookieparser())
 
 // import cors from 'cors';
-app.use(cors({ origin: 'https://todomyd-fpsiwbatc-anuj-s-projects-6ea949e7.vercel.app' }));
+// app.use(cors({ origin: 'https://todomyd-fpsiwbatc-anuj-s-projects-6ea949e7.vercel.app' }));
 
 
 // routes import
