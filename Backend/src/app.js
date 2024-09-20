@@ -9,6 +9,9 @@ app.use(cors({
     origin:process.env.CORS_ORIGIN ,
     Credential : true
 }))
+app.get('/',(req,res)=>{
+    res.send("hello")
+})
 app.use(json({
     limit : "16kb"
 }))
