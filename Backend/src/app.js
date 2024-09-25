@@ -24,6 +24,9 @@ app.use(express.urlencoded({
 app.use(express.static("public"))
 app.use(cookieparser())
 
+app.get('/',(req,res)=>{
+    res.send("<h1>Hello</h1>");
+})
 // import cors from 'cors';
 // app.use(cors({ origin: 'https://todomyd-fpsiwbatc-anuj-s-projects-6ea949e7.vercel.app' }));
 
